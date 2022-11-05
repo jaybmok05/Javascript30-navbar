@@ -1,0 +1,340 @@
+/* ================================================== */
+/* CSS Reset ======================================== */
+/* ================================================== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-spacing: 0;
+}
+/* ====================================================== */
+
+/* foundation styles======================================*/
+/* ====================================================== */
+:root{
+    --color-black: #000;
+    --color-white: #fff;
+    --color-grey: rgba(139, 139, 139, 0.979);
+    --color-orange: rgb(255, 196, 0);
+    --color-green: rgb(30, 71, 26);
+
+    --fs-xsmall: 0.5rem;
+    --fs-small: 0.75rem;
+    --fs-medium: 1rem;
+    --fs-large: 2.5rem;
+    
+    --fw-semi-bold: 600; 
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+* a, p{
+    text-decoration: none;
+    color: var(--color-grey);
+}
+* ul{
+    list-style-type: none;
+}
+
+.page-header, .page-header .header-nav,.product-descript, main, .reviews, .top-nav{
+    display: flex;
+}
+/* ====================================================== */
+
+/* header ================================================*/
+/* ====================================================== */
+
+.page-header{
+    align-items: center;
+    min-height: 60px;
+    margin-bottom: 2rem;
+    justify-content: space-between;
+}
+.top-nav{
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    min-width: 70%;
+}
+.header-nav{
+    gap: 2rem;
+}
+.products{
+    display: none;
+ }
+ 
+.product-link:hover .products{
+    display: block;
+    width: 400px;
+    position: absolute;
+    top: 5.5rem;
+    transform: translateX(-2rem);
+    background: var(--color-white);
+    border-radius: 12px;
+    padding: 1rem;
+    z-index: 1000000;
+
+} 
+.product-descript{
+    align-items: flex-start;
+}
+.product-descript img{
+    margin-right: 1rem;
+}
+.sub-descript{
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
+    
+}
+.sub-descript h3{
+    font-weight: bold;
+    color: rgb(1, 38, 68);
+}
+.button, main button{
+    padding: .75rem 1rem;
+    border: none;
+    border-radius: 3px;
+    background-color: var(--color-green);
+    color: var(--color-white);
+    font-weight: var(--fw-semi-bold);
+}
+.top-navToggler{
+    display:none;
+}
+.call-action:nth-child(2){
+    margin: 0 .5rem;
+}
+.fa-solid{
+    color: var(--color-green);
+}
+
+/* ====================================================== */
+
+/* main ================================================*/
+/* ====================================================== */
+.reviews{
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.yellow-text{
+    color: var(--color-orange);
+}
+
+.left-part h1{
+    font-size: var(--fs-large);
+    font-weight: bold;
+    margin-bottom: .75rem;
+    line-height: 2.8rem
+}
+.left-part .par {
+    margin-bottom: .75rem;
+
+}
+
+.left-part{
+    width: 61%;
+    line-height: 2rem;
+}
+main{
+    margin-bottom: 5rem;
+    justify-content: space-between;
+}
+
+.right-part img{
+  width: 230px;
+
+}
+
+/* ====================================================== */
+
+/* footer ================================================*/
+/* ====================================================== */
+.page-footer{
+    margin: 2rem 0;
+    min-height: 100px;
+
+}
+.page-footer p{
+    margin: 2rem 0rem;
+    text-align: center;
+}
+.companies{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+    padding: 1rem;
+}
+
+@media (max-width: 48em){
+    .page-header .header-nav, main, .top-nav{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .page-header a{
+        color: var(--color-white)
+    }
+
+    .call-action{
+        margin-top: 2rem;
+    }
+
+    .top-nav{
+        position: absolute;
+        width: 60vh;
+        top: 0rem;
+        right: 0rem;
+        z-index: 1000;
+        background-color: var(--color-green);
+        padding: min(14vh, 10rem);
+        transform: translateX(-150%);
+        transition: transform 350ms ease-out;
+        overflow-x: auto;
+        border-radius: 1rem;
+        align-items: flex-start; 
+       
+    }
+
+    .top-navToggler{
+        display: block;
+        top: 1rem;
+        right: 0rem;
+        width: 2rem;
+        aspect-ratio: 1;
+        z-index: 10000;
+        border: none;
+        background: url(../Assets/Menu.svg) transparent;
+        background-repeat: no-repeat;
+    }
+
+    .top-nav[data-visible="true"]{
+       transform: translateX(0%);
+    }
+
+    .top-navToggler[aria-expanded="true"]{
+        background: url(../Assets/Close.svg) transparent;
+        background-repeat: no-repeat;
+    }
+
+ 
+
+    .button{
+        background: var(--color-orange);
+    }
+    .fa-solid{
+    color: var(--color-orange);
+
+    }
+
+    .right-part img, .left-part{
+        width: 100%;
+    }
+    .companies{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 62em){
+    .page-header .header-nav, .top-nav{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .top-nav{
+        position: absolute;
+        width: 60vh;
+        top: 0rem;
+        right: 0rem;
+        z-index: 1000;
+        background-color: var(--color-green);
+        padding: min(14vh, 10rem);
+        transform: translateX(-150%);
+        transition: transform 350ms ease-out;
+        overflow-x: auto;
+        border-radius: 1rem;
+        align-items: flex-start; 
+       
+    }
+    .top-navToggler{
+        display: block;
+        top: 1rem;
+        right: 0rem;
+        width: 2rem;
+        aspect-ratio: 1;
+        z-index: 10000;
+        border: none;
+        background: url(../Assets/Menu.svg) transparent;
+        background-repeat: no-repeat;
+    }
+    .top-nav[data-visible="true"]{
+       transform: translateX(0%);
+    }
+
+    .top-navToggler[aria-expanded="true"]{
+        background: url(../Assets/Close.svg) transparent;
+        background-repeat: no-repeat;
+    }
+
+    .page-header a{
+        color: var(--color-white)
+    }
+
+    .button{
+        background: var(--color-orange);
+    }
+    .fa-solid{
+    color: var(--color-orange);
+
+    }
+    .rating{
+        font-size: 0.85rem;
+    }
+    .right-part img, .left-part{
+        width: 100%;
+    }
+    .companies{
+        grid-template-columns: 1fr 1fr;
+    }
+    .companies img{
+        width: 100%;
+    }
+}
